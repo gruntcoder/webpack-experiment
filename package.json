@@ -1,0 +1,32 @@
+{
+  "name": "webpack-experiment",
+  "version": "1.0.0",
+  "description": "AethOS webpack experiment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gruntcoder/webpack-experiment.git"
+  },
+  "keywords": [
+    "aethos",
+    "webpack",
+    "spike"
+  ],
+  "author": "Grunt Coder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gruntcoder/webpack-experiment/issues"
+  },
+  "homepage": "https://github.com/gruntcoder/webpack-experiment#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "webpack": "^3.5.5"
+  }
+}
