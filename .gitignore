@@ -58,5 +58,5 @@ typings/
 .env
 
 # webpack output
-dist/*.js
+dist
 
