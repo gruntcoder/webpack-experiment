@@ -1,12 +1,5 @@
 # Webpack Experimenting
 
-This project is a SPIKE.  See NOTES.md for more information.
+This project is a SPIKE and does not function, so don't bother trying to use it as an example.
 
-## Installing
-
-```
-git clone https://github.com/gruntcoder/webpack-experiment.git
-cd webpack-experiment
-npm install
-```
-
+See NOTES.md for more information.

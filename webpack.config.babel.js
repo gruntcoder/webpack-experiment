@@ -3,6 +3,7 @@ const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+const { AureliaPlugin } = require('aurelia-webpack-plugin');
 
 function isExternal(module) {
   var context = module.context;
@@ -39,7 +40,21 @@ let serverConfig = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'lib.node.js'
   },
-  module: modules
+  module: {
+    rules: [{
+      test: /\.js$/,
+      exclude: /(node_modules|bower_components)/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['env'],
+          plugins: [
+            'transform-runtime'
+          ]
+        }
+      }
+    }]
+  }
 };
 
 var clientConfig = {
@@ -49,10 +64,11 @@ var clientConfig = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'lib.js'
+    filename: '[name].js'
   },
   plugins: [
     new HtmlWebpackPlugin(),
+    new AureliaPlugin(),
     new CommonsChunkPlugin({
       name: 'vendors',
       minChunks: function(module) {
@@ -73,5 +89,7 @@ let workerConfig = {
     filename: 'lib.worker.js'
   }
 };
+
+
 
 module.exports = [serverConfig, clientConfig, workerConfig];
